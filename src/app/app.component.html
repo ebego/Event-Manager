@@ -1,3 +1,93 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <h1>Angular Bootstrap</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid py-3">
+  <div class="row my-3">
+    <div class="col">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+      </div>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <button class="btn btn-sm btn-outline-primary" (click)="open(demoModal)">Launch demo modal</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #demoModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" name="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" ngbDatepicker #dp="ngbDatepicker">
+          <button type="button" class="btn btn-outline-secondary bi bi-calendar" (click)="dp.toggle()"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+
+
+<!--
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,25 +112,22 @@
       </h1>
     </div>
 
-  <!--== CSS Files ==-->
-  <!--  <link href="css/bootstrap.css" rel="stylesheet" media="screen">-->
-  <!--  <link href="css/style.css" rel="stylesheet" media="screen">-->
-  <!--  <link href="css/font-awesome.css" rel="stylesheet" media="screen">-->
-  <!--  <link href="css/owl.carousel.css" rel="stylesheet" media="screen">-->
-  <!--  <link href="css/flexslider.css" rel="stylesheet" media="screen">-->
-  <!--  <link href="css/fancySelect.css" rel="stylesheet" media="screen">-->
-  <!--  <link href="css/responsive.css" rel="stylesheet" media="screen">-->
+  &lt;!&ndash;== CSS Files ==&ndash;&gt;
+  &lt;!&ndash;  <link href="css/bootstrap.css" rel="stylesheet" media="screen">&ndash;&gt;
+  &lt;!&ndash;  <link href="css/style.css" rel="stylesheet" media="screen">&ndash;&gt;
+  &lt;!&ndash;  <link href="css/font-awesome.css" rel="stylesheet" media="screen">&ndash;&gt;
+  &lt;!&ndash;  <link href="css/owl.carousel.css" rel="stylesheet" media="screen">&ndash;&gt;
+  &lt;!&ndash;  <link href="css/flexslider.css" rel="stylesheet" media="screen">&ndash;&gt;
+  &lt;!&ndash;  <link href="css/fancySelect.css" rel="stylesheet" media="screen">&ndash;&gt;
+  &lt;!&ndash;  <link href="css/responsive.css" rel="stylesheet" media="screen">&ndash;&gt;
 
-  <!--== Google Fonts ==-->
+  &lt;!&ndash;== Google Fonts ==&ndash;&gt;
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-<script src="../node_modules/jquery/dist/jquery.js"></script>  <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 <header id="header">
   <div id="menu" class="header-menu fixed">
@@ -55,7 +142,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <!--== Logo ==-->
+            &lt;!&ndash;== Logo ==&ndash;&gt;
             <span class="navbar-brand logo">
 									Evento
 								</span>
@@ -63,7 +150,7 @@
           </div>
           <div class="navbar-collapse collapse">
 
-            <!--== Navigation Menu ==-->
+            &lt;!&ndash;== Navigation Menu ==&ndash;&gt;
             <ul class="nav navbar-nav">
               <li class="current"><a href="#header">Home</a></li>
               <li><a href="#about">About us</a></li>
@@ -80,7 +167,7 @@
     </div>
   </div>
 
-  <!--== Site Description ==-->
+  &lt;!&ndash;== Site Description ==&ndash;&gt;
   <div class="header-cta">
     <div class="container">
       <div class="row">
@@ -99,7 +186,7 @@
     </div>
     <div class="main-slider" id="main-slider">
 
-      <!--== Main Slider ==-->
+      &lt;!&ndash;== Main Slider ==&ndash;&gt;
       <ul class="slides">
         <li><img src="images/demo/bg-slide-01.jpg" alt="Slide Image"/></li>
         <li><img src="images/demo/bg-slide-02.jpg" alt="Slide Image 2"/></li>
@@ -113,9 +200,9 @@
   <div class="container box">
 
 
-    <!--===============================-->
-    <!--== About us ===================-->
-    <!--===============================-->
+    &lt;!&ndash;===============================&ndash;&gt;
+    &lt;!&ndash;== About us ===================&ndash;&gt;
+    &lt;!&ndash;===============================&ndash;&gt;
     <section id="about" class="about-us">
       <div class="title-start col-md-4 col-md-offset-4">
         <br />
@@ -176,13 +263,13 @@
         </div>
       </div>
     </section>
-    <!--==========-->
+    &lt;!&ndash;==========&ndash;&gt;
 
 
 
-    <!--===============================-->
-    <!--== Schedule ===================-->
-    <!--===============================-->
+    &lt;!&ndash;===============================&ndash;&gt;
+    &lt;!&ndash;== Schedule ===================&ndash;&gt;
+    &lt;!&ndash;===============================&ndash;&gt;
     <section id="schedule" class="row">
       <div class="title-start schedule-menu col-md-4 col-md-offset-4">
         <br />
@@ -405,9 +492,9 @@
 
 
 
-    <!--===============================-->
-    <!--== Blog =============-->
-    <!--===============================-->
+    &lt;!&ndash;===============================&ndash;&gt;
+    &lt;!&ndash;== Blog =============&ndash;&gt;
+    &lt;!&ndash;===============================&ndash;&gt;
     <section id="blog" class="row">
       <div class="title-start col-md-4 col-md-offset-4"><h2>Blog</h2>
         <p class="sub-text text-center">Awesome news and articles from us</p>
@@ -446,10 +533,10 @@
         </div>
       </div>
     </section>
-    <!--==========-->
-    <!--===============================-->
-    <!--== Pricing Tables =============-->
-    <!--===============================-->
+    &lt;!&ndash;==========&ndash;&gt;
+    &lt;!&ndash;===============================&ndash;&gt;
+    &lt;!&ndash;== Pricing Tables =============&ndash;&gt;
+    &lt;!&ndash;===============================&ndash;&gt;
     <section id="prices" class="row">
       <div class="title-start events-menu col-md-4 col-md-offset-4">
         <h2>Pricing</h2>
@@ -471,7 +558,7 @@
               </ul>
 
               <h5 class="order"><a href="#">Order Now</a></h5>
-            </div><!--.plan-->
+            </div>&lt;!&ndash;.plan&ndash;&gt;
 
             <div class="plan">
               <h3 class="name">Gold</h3>
@@ -484,7 +571,7 @@
               </ul>
 
               <h5 class="order"><a href="#">Order Now</a></h5>
-            </div><!--.plan-->
+            </div>&lt;!&ndash;.plan&ndash;&gt;
 
             <div class="plan">
               <h3 class="name">Platinum</h3>
@@ -497,9 +584,9 @@
               </ul>
 
               <h5 class="order"><a href="#">Order Now</a></h5>
-            </div><!--.plan-->
-          </div><!--.pricing-table-->
-        </div><!--.wrap-->
+            </div>&lt;!&ndash;.plan&ndash;&gt;
+          </div>&lt;!&ndash;.pricing-table&ndash;&gt;
+        </div>&lt;!&ndash;.wrap&ndash;&gt;
       </div>
 
       <div class="col-sm-11  pricing-table visible-sm visible-xs">
@@ -514,7 +601,7 @@
           </ul>
 
           <h5 class="order"><a href="#">Order Now</a></h5>
-        </div><!--.plan-->
+        </div>&lt;!&ndash;.plan&ndash;&gt;
       </div>
       <div class="col-sm-11  pricing-table visible-sm visible-xs">
         <div class="plan">
@@ -528,7 +615,7 @@
           </ul>
 
           <h5 class="order"><a href="#">Order Now</a></h5>
-        </div><!--.plan-->
+        </div>&lt;!&ndash;.plan&ndash;&gt;
       </div>
       <div class="col-sm-11  pricing-table visible-sm visible-xs">
 
@@ -543,16 +630,16 @@
           </ul>
 
           <h5 class="order"><a href="#">Order Now</a></h5>
-        </div><!--.plan-->
+        </div>&lt;!&ndash;.plan&ndash;&gt;
 
       </div>
     </section>
-    <!--==========-->
+    &lt;!&ndash;==========&ndash;&gt;
 
-    <!--==========-->
-    <!--===============================-->
-    <!--== Team =============-->
-    <!--===============================-->
+    &lt;!&ndash;==========&ndash;&gt;
+    &lt;!&ndash;===============================&ndash;&gt;
+    &lt;!&ndash;== Team =============&ndash;&gt;
+    &lt;!&ndash;===============================&ndash;&gt;
 
     <section id="team" class="team">
       <div class="container">
@@ -626,11 +713,11 @@
 
     </section>
   </div></div>
-<!--==========-->
-<!--==========-->
-<!--===============================-->
-<!--== Testimonial =============-->
-<!--===============================-->
+&lt;!&ndash;==========&ndash;&gt;
+&lt;!&ndash;==========&ndash;&gt;
+&lt;!&ndash;===============================&ndash;&gt;
+&lt;!&ndash;== Testimonial =============&ndash;&gt;
+&lt;!&ndash;===============================&ndash;&gt;
 <section id="testimonial" class="testimonial-area">
   <div class="container">
     <div class="title-start col-md-4 col-md-offset-4">
@@ -664,13 +751,13 @@
         </div>
       </div>
     </div>
-  </div><!-- container -->
-</section><!-- testimonial -->
+  </div>&lt;!&ndash; container &ndash;&gt;
+</section>&lt;!&ndash; testimonial &ndash;&gt;
 
 <div class="content mcontent">
   <div id="gotop" class="gotop fa fa-arrow-up"></div>
 </div>
-<!-- Contact Area -->
+&lt;!&ndash; Contact Area &ndash;&gt;
 
 <section id="contact" class="mapWrap">
   <div id="googleMap" style="width:100%;"></div>
@@ -709,8 +796,8 @@
           </form>
         </div>
       </div>
-    </div><!-- container -->
-  </div><!-- contact-area -->
+    </div>&lt;!&ndash; container &ndash;&gt;
+  </div>&lt;!&ndash; contact-area &ndash;&gt;
   <div id="social">
     <div class="container">
       <div class="row">
@@ -726,8 +813,8 @@
         </div>
       </div>
     </div>
-  </div><!-- social -->
-</section><!-- contact -->
+  </div>&lt;!&ndash; social &ndash;&gt;
+</section>&lt;!&ndash; contact &ndash;&gt;
 <footer>
   <div class="container">
     <div class="row">
@@ -742,7 +829,7 @@
 </footer>
 
 
-<!--== Javascript Files ==-->
+&lt;!&ndash;== Javascript Files ==&ndash;&gt;
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -772,3 +859,4 @@
 </script>
 </body>
 </html>
+-->
