@@ -1,0 +1,8 @@
+.search-background {
+  background-image: url("/assets/search-image.jpeg");
+  background-size: cover;
+}
+
+.search-form {
+  padding: 15rem 10rem;
+}
