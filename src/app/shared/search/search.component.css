@@ -1,8 +1,9 @@
 .search-background {
-  background-image: url("/assets/search-image.jpeg");
+  background-image: url("/assets/Light-blue-wavy-abstract-background-vector-01.jpg");
   background-size: cover;
 }
 
 .search-form {
-  padding: 15rem 10rem;
+  padding: 8rem 10rem;
+  background-color: transparent;
 }
