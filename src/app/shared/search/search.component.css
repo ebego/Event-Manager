@@ -1,0 +1,15 @@
+.search-background {
+  background-image: url("/assets/Light-blue-wavy-abstract-background-vector-01.jpg");
+  position: relative;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  z-index: 0;
+  background-size: 100% 100%;
+}
+
+.search-form {
+  padding: 8rem 10rem;
+  background-color: transparent;
+}
