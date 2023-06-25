@@ -5,6 +5,7 @@ import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
 import {EventsPageComponent} from "./pages/events-page/events-page.component";
 import {EventDetailPageComponent} from "./pages/event-detail-page/event-detail-page.component";
+import {ContactFormComponent} from "./pages/contact-page/contact-form/contact-form.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -12,6 +13,8 @@ const routes: Routes = [
   {path: 'contacts', component: ContactPageComponent},
   {path: 'events', component: EventsPageComponent},
   {path: 'event-detail/:id', component: EventDetailPageComponent},
+  {path: 'form', component: ContactFormComponent},
+
 ];
 
 

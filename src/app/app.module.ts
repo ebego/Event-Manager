@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { SearchComponent } from './shared/search/search.component';
 import { LatestEventsComponent } from './pages/home-page/latest-events/latest-events.component';
 import { MostViewedComponent } from './pages/home-page/most-viewed/most-viewed.component';
+import { ContactFormComponent } from './pages/contact-page/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MostViewedComponent } from './pages/home-page/most-viewed/most-viewed.c
     SearchComponent,
     LatestEventsComponent,
     MostViewedComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
