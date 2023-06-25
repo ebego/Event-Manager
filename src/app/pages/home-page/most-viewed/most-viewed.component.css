@@ -1,0 +1,26 @@
+.events {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.events h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.event {
+  border: 1px solid #40b766;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.event h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.event p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}

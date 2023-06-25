@@ -1,0 +1,12 @@
+h1{
+  color: #00564c;
+  transition:color 170ms ease-in-out, background-color 170ms ease-in-out;
+  font-weight: 300;
+  font-family: ui-serif;
+  position: relative;
+  left: 140px;
+}
+span.tittle{
+  font-size: calc(0.5rem + 1vw);
+  font-family: system-ui;
+}
