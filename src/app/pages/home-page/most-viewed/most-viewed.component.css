@@ -1,23 +1,27 @@
 .events {
-  max-width: 800px;
+  max-width: 50%;
   margin: 0 auto;
   padding: 20px;
 }
 
-.events h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
 .event {
-  border: 1px solid #40b766;
+  border: 1px solid green;
   padding: 10px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.event img {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
 }
 
 .event h2 {
   font-size: 20px;
   margin-bottom: 10px;
+  color: #337126;
 }
 
 .event p {
