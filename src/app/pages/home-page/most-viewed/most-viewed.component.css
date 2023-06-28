@@ -28,3 +28,20 @@
   font-size: 16px;
   margin-bottom: 5px;
 }
+
+
+.btn:hover {
+  border: 1px solid black;
+  transform: scale(1.10);
+}
+
+.btn:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+.btn{
+  font-size: 11px;
+  text-align: center;
+  white-space:nowrap
+}
