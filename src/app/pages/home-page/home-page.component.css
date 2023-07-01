@@ -103,10 +103,8 @@ body {
   border-radius: 100px;
 }
 .one {
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Enrique_Iglesias_2011%2C_2.jpg/370px-Enrique_Iglesias_2011%2C_2.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Enrique_Iglesias_2011%2C_2.jpg/370px-Enrique_Iglesias_2011%2C_2.jpg') no-repeat center;
 }
 
 .two {

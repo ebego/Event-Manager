@@ -1,37 +1,29 @@
-.events {
-  max-width: 50%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.event {
-  border: 1px solid green;
-  padding: 10px;
-  margin-bottom: 20px;
+.row {
+  color: white;
+  background: linear-gradient(#d4d4d4, #b1b1b1) padding-box,
+  linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
   display: flex;
-  align-items: center;
+  cursor: pointer;
+  transform-origin: right bottom;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.event img {
-  width: 150px;
-  height: auto;
-  margin-right: 20px;
+.date{
+  color: white;
 }
 
-.event h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #337126;
+.paragraph{
+  color: white;
 }
 
-.event p {
-  font-size: 16px;
-  margin-bottom: 5px;
+.title{
+  text-align: center;
 }
-
 
 .btn:hover {
-  border: 1px solid black;
+  border: 2px solid black;
   transform: scale(1.10);
 }
 
@@ -41,7 +33,81 @@
 
 
 .btn{
-  font-size: 11px;
+  font-size: 17px;
   text-align: center;
-  white-space:nowrap
+  white-space:nowrap;
+  background: whitesmoke;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+}
+
+.container {
+  width: 100%;
+  height: 500px;
+}
+
+.box:hover {
+  margin-bottom: -10px;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.7);
+  box-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+.box h1 {
+  color: #fff;
+  padding: 30px;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 25px;
+  background: rgba(0,0,0,0.8);
+  -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.7);
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+.poster {
+  width: 130px;
+  height:130px;
+  margin: 120px auto;
+  position: relative;
+  border-radius: 100px;
+}
+.one {
+  background-size: cover;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Enrique_Iglesias_2011%2C_2.jpg/370px-Enrique_Iglesias_2011%2C_2.jpg') no-repeat center;
+}
+
+.two {
+  background-size: cover;
+  background: url('https://lastfm.freetls.fastly.net/i/u/770x0/ecbb0048a637392e3e1a5c8a5b2bf2c2.jpg') no-repeat center;
+}
+.three {
+  background-size: cover;
+  background: url('https://i.hurimg.com/i/hdn/75/0x0/59c8f5ef45d2a027e83cde3f.jpg') no-repeat center;
+}
+
+.four {
+  background-size: cover;
+  background: url('https://www.nocesitaliennes.fr/wp-content/uploads/2021/10/Espace-di%CC%82ner.jpg.webp') no-repeat center;
+}
+
+.five {
+  background-size: cover;
+  background: url('https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F511915019%2F489255883293%2F1%2Foriginal.20230510-153257?h=2000&w=720&auto=format%2Ccompress&q=75&sharp=10&s=2f32b557e3e2df2f043f424936807600')  no-repeat center;
+}
+
+.six {
+  background-size: cover;
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrOAb6fTKtQCHLlLCUX3kZ6nNHd4qK1N0DGJpWzCQeQM7pm8bYeR_Jy82Dso_Yc679OMQ&usqp=CAU') no-repeat center;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
