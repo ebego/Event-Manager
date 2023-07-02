@@ -121,9 +121,9 @@ body {
   position: relative;
   border-radius: 100px;
 }
-.one {
+.bg-image {
   background-size: cover;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Enrique_Iglesias_2011%2C_2.jpg/370px-Enrique_Iglesias_2011%2C_2.jpg') no-repeat center;
+  /*background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Enrique_Iglesias_2011%2C_2.jpg/370px-Enrique_Iglesias_2011%2C_2.jpg') no-repeat center;*/
 }
 
 .two {
