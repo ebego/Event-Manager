@@ -1,5 +1,6 @@
 <div>
   <h2 class="title">Latest Events</h2>
+  <div class="col-12">
     <div *ngFor="let event of events" class="px-5 row">
       <div class="box bg-image mx-3 my-3" [style.background-image]="'url(' + env.apiBaseUrl + '/images/' + event.banner + ')'" [routerLink]="'/event-detail/' + event?.id">
         <div class="date">
@@ -13,4 +14,5 @@
         </div>
       </div>
     </div>
+  </div>
 </div>

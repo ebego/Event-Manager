@@ -14,4 +14,11 @@ export class EventService {
   getLatestEvents(): Observable<Event[]> {
     return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events/latest");
   }
+  getMostViewedEvents(): Observable<Event[]> {
+    return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events/most-viewed");
+  }
+  getAllEvents(): Observable<Event[]> {
+    return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events");
+  }
+
 }

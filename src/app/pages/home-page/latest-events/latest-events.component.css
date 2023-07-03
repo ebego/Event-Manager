@@ -1,51 +1,3 @@
-/*.events {*/
-/*  max-width: 50%;*/
-/*  margin: 0 auto;*/
-/*  padding: 20px;*/
-/*}*/
-
-/*.event {*/
-/*  border: 1px solid green;*/
-/*  padding: 10px;*/
-/*  margin-bottom: 20px;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*}*/
-
-/*.event img {*/
-/*  width: 150px;*/
-/*  height: auto;*/
-/*  margin-right: 20px;*/
-/*}*/
-
-/*.event h2 {*/
-/*  font-size: 20px;*/
-/*  margin-bottom: 10px;*/
-/*  color: #337126;*/
-/*}*/
-
-/*.event p {*/
-/*  font-size: 16px;*/
-/*  margin-bottom: 5px;*/
-/*}*/
-
-
-/*.btn:hover {*/
-/*  border: 1px solid black;*/
-/*  transform: scale(1.10);*/
-/*}*/
-
-/*.btn:active {*/
-/*  transform: scale(0.95) rotateZ(1.7deg);*/
-/*}*/
-
-
-/*.btn{*/
-/*  font-size: 11px;*/
-/*  text-align: center;*/
-/*  white-space:nowrap*/
-/*}*/
-
 .row {
   color: white;
   background: linear-gradient(#d4d4d4, #b1b1b1) padding-box,
@@ -123,31 +75,6 @@ body {
 }
 .bg-image {
   background-size: cover;
-  /*background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Enrique_Iglesias_2011%2C_2.jpg/370px-Enrique_Iglesias_2011%2C_2.jpg') no-repeat center;*/
-}
-
-.two {
-  background-size: cover;
-  background: url('https://lastfm.freetls.fastly.net/i/u/770x0/ecbb0048a637392e3e1a5c8a5b2bf2c2.jpg') no-repeat center;
-}
-.three {
-  background-size: cover;
-  background: url('https://i.hurimg.com/i/hdn/75/0x0/59c8f5ef45d2a027e83cde3f.jpg') no-repeat center;
-}
-
-.four {
-  background-size: cover;
-  background: url('https://www.visit-tirana.com/FormMedia/Events/2508/2508_Untitled-design-12-.png') no-repeat center;
-}
-
-.five {
-  background-size: cover;
-  background: url('https://www.visit-tirana.com/FormMedia/Events/2481/2481_Chopin-fest.jpg') no-repeat center;
-}
-
-.six {
-  background-size: cover;
-  background: url('https://www.visit-tirana.com/FormMedia/Events/2500/2500_Untitled-design-38-.png') no-repeat center;
 }
 
 @-webkit-keyframes rotation {
