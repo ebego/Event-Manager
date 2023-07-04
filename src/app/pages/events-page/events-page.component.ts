@@ -8,9 +8,16 @@ import {environment} from "../../../environments/environment";
   templateUrl: './events-page.component.html',
   styleUrls: ['./events-page.component.css']
 })
-export class EventsPageComponent implements OnInit{
+export class EventsPageComponent implements OnInit {
   events: Event[] | any;
   env: any;
+
+  newEvent: Event = {
+    title: '',
+    eventDate: '',
+    description: '',
+    banner: ''
+  }
 
   constructor(private eventService: EventService) {
   }
@@ -25,5 +32,19 @@ export class EventsPageComponent implements OnInit{
         console.error(err);
       }
     })
+  }
+
+  add(): void {
+    // Upload data to server and update local table
+    this.eventService.addEvent(this.newEvent)
+      .subscribe(event => {
+        this.events.push(event);
+        this.newEvent = {
+          title: '',
+          eventDate: '',
+          description: '',
+          banner: ''
+        }
+      });
   }
 }

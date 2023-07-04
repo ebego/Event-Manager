@@ -20,5 +20,10 @@ export class EventService {
   getAllEvents(): Observable<Event[]> {
     return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events");
   }
+  getEventsById(id: number): Observable<Event[]> {
+    return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events/{id}");  }
+  addEvent(event: Event): Observable<Event[]> {
+    return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events/add");
+  }
 
 }
