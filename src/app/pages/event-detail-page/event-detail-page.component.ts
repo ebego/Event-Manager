@@ -9,14 +9,15 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-event-detail-page',
   templateUrl: './event-detail-page.component.html',
   styleUrls: ['./event-detail-page.component.css']
+
 })
 export class EventDetailPageComponent implements OnInit{
   events: Event[] | any;
   event!: Event[];
-  env: any;
   constructor(private eventService: EventService,
               private modalService: NgbModal,
-              private route: ActivatedRoute,) {}
+              private route: ActivatedRoute) {
+}
   open(content:any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
       (result) => {
@@ -29,8 +30,7 @@ export class EventDetailPageComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.env = environment;
-    const id = + (this.env.snapshot.paramMap.get('id') || 0);
+    const id = + (this.route.snapshot.paramMap.get('id') || 0);
     this.eventService.getEventsById(id).subscribe({
       next: result => {
                 this.events = result;
