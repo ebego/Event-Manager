@@ -31,22 +31,11 @@ export class EventDetailPageComponent implements OnInit{
   }
 
   ngOnInit() {
-  //   this.env=environment;
-  //   const id = + (this.route.snapshot.paramMap.get('id') || 0);
-  //   this.eventService.getEventsById(id).subscribe({
-  //     next: result => {
-  //       this.event = result;
-  //     },
-  //     error: err => {
-  //       console.error(err);
-  //     }
-  //   })
-  // }
-  //   const UUID = uuidv4();
-    const UUID = this.route.snapshot.paramMap.get('UUID');
-    const ID = UUID ? UUID.replace(/-/g, '') : ''; // Remove dashes from UUID to get the ID
-
-    this.eventService.getEventsById(ID).subscribe({
+    this.env = environment
+    const id = this.route.snapshot.paramMap.get('id') || '';
+    if (!id)
+      console.error("Id is not valid: ", "No id in paramter")
+    this.eventService.getEventsById(id).subscribe({
       next: result => {
         this.event = result;
       },
