@@ -4,5 +4,7 @@ export interface Event {
   eventDate?: string;
   description?: string;
   banner?: string;
-  isPast?: boolean
+  isPast?: boolean;
+  price?: number;
+  location?: string
 }

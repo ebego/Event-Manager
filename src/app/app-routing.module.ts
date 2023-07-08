@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'home', component: HomePageComponent},
   {path: 'contacts', component: ContactPageComponent},
   {path: 'events', component: EventsPageComponent},
+  {path: 'events/:query', component: EventsPageComponent},
   {path: 'event-detail/:id', component: EventDetailPageComponent},
   {path: 'form', component: ContactFormComponent},
   {path: 'register', component: RegisterFormComponent},
