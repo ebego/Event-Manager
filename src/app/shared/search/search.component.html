@@ -1,6 +1,20 @@
 <div class="col-12">
-<form class="d-flex bg-transparent search-form search-form search-background">
-  <input class="placeholder-glow bg-transparent border border-dark form-control me-2" type="search" placeholder="Search by Event Title" aria-label="Large Search" aria-describedby="inputGroup-sizing-sm">
-  <button class="btn btn-outline-success border border-dark" type="submit">Search</button>
+<form [formGroup]="searchForm"
+      class="d-flex bg-transparent search-form search-background"
+      (ngSubmit)="search($event)"
+      (reset)="resetForm()"
+>
+  <div class="d-flex flex-column w-100">
+    <input
+      formControlName="query"
+      type="text"
+      class="placeholder-glow bg-transparent border border-dark form-control me-2"
+      type="search" placeholder="Search by Event Title"
+      aria-label="Large Search"
+      aria-describedby="inputGroup-sizing-sm" />
+    <label *ngIf="!searchForm.value.query && isSearching" class="text-danger small">Provide a value to search!</label>
+  </div>
+  <button class="align-self-start btn btn-outline-success border border-dark mx-2 " type="submit">Search</button>
+  <button *ngIf="isSearching" class="align-self-start btn my-1 btn-sm btn-outline-success border border-dark" type="reset"><i class="bi-x-circle"></i></button>
 </form>
 </div>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Event} from "../../models/event.model";
 import {EventService} from "../../services/event/event.service";
 import {environment} from "../../../environments/environment";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-events-page',
@@ -11,6 +12,7 @@ import {environment} from "../../../environments/environment";
 export class EventsPageComponent implements OnInit {
   events: Event[] | any;
   env: any;
+  query?: string
 
   newEvent: Event = {
     title: '',
@@ -19,19 +21,12 @@ export class EventsPageComponent implements OnInit {
     banner: ''
   }
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.env = environment;
-    this.eventService.getAllEvents().subscribe({
-      next: result => {
-        this.events = result;
-      },
-      error: err => {
-        console.error(err);
-      }
-    })
+    this.query = this.route.snapshot.paramMap.get('query') || '';
+    this.refreshList(this.query)
   }
 
   add(): void {
@@ -46,5 +41,17 @@ export class EventsPageComponent implements OnInit {
           banner: ''
         }
       });
+  }
+
+  refreshList(query: string) {
+    this.env = environment;
+    this.eventService.getAllEvents(query).subscribe({
+      next: result => {
+        this.events = result;
+      },
+      error: err => {
+        console.error(err);
+      }
+    })
   }
 }

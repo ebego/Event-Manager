@@ -1,12 +1,21 @@
 <div class="container p-3">
   <div class="row">
-    <div class="col-4 event" *ngFor="let event of events">
-      <img [src]="env.apiBaseUrl + '/images/' + event.banner"  role="button" [routerLink]="'/event-detail/' + event?.id" class="rounded float-start" alt="...">
-      {{event.title}}
+    <app-search [query]="query" (onSearch)="refreshList($event)"  class="my-2"></app-search>
+    <div class="col-12 col-md-4 col-lg- event" *ngFor="let event of events">
+      <a style="text-decoration: none;" [routerLink]="'/event-detail/' + event?.id">
 
-      <p class="text-muted fst-italic color">
-        <a class="btn text-reset " [routerLink]="'/event-detail/' + event?.id" role="button">Read More --></a>
-      </p>
+
+      <div class="d-flex position-relative align-items-center justify-content-center" style="min-height: 15rem; background-size: cover; z-index: 0" [style.background-image]="'url('+ env.apiBaseUrl + '/images/' + event.banner + ')'">
+        <div style="z-index: 1; position: absolute; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.3)"></div>
+        <div class="text-white" style="z-index: 2; font-size: 1.4rem;" ><strong>{{event.title}}</strong></div>
+      </div>
+      <!--<img [src]="env.apiBaseUrl + '/images/' + event.banner"  role="button" [routerLink]="'/event-detail/' + event?.id" class="rounded float-start" alt="...">-->
+
+
+        <p class="text-muted fst-italic color">
+          <a class="btn text-reset " href="javascript:void(0)" role="button">Read More --></a>
+        </p>
+      </a>
     </div>
   </div>
 </div>
