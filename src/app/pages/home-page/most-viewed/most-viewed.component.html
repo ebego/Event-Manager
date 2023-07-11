@@ -1,19 +1,20 @@
-<div>
-  <h2 class="title">Most Viewed</h2>
-
-  <div class="col-12">
-    <div *ngFor="let event of events" class="px-5 row">
-      <div class="box bg-image mx-3 my-3" [style.background-image]="'url(' + env.apiBaseUrl + '/images/' + event.banner + ')'" [routerLink]="'/event-detail/' + event?.id">
-        <div class="date">
-          <h4>{{event?.eventDate}}</h4>
-        </div>
-
-        <div class="event col-md-auto float-md-end mb-6 ms-md-6">
-          <h1>{{event?.title}}</h1>
-          <div class="poster p1 rounded float-start">
+<section class="features3 cid-rbmdr8RGdl" id="features3-3">
+  <div class="container">
+    <h2 class="mbr-fonts-style mb-4 align-center display-2">Most Viewed</h2>
+    <div class="media-container-row" id="media">
+      <div *ngFor="let event of events" class="col-12 col-md-4 col-lg-4">
+        <div class="card">
+          <div class="card-img">
+            <img [src]="env.apiBaseUrl + '/images/' + event?.banner" [routerLink]="'/event-detail/' + event?.id" alt="simple bootstrap template" title="">
+          </div>
+          <div class="card-box">
+            <h4 class="card-title mbr-fonts-style align-center display-5">
+              {{event?.title}} </h4>
+            <p class="mbr-text mbr-fonts-style align-center mbr-light display-7">{{event?.description}}</p>
+            <div class="mbr-section-btn align-center"><a class="btn-underline mr-3 text-primary display-4" [routerLink]="'/event-detail/' + event?.id" >Read More</a></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
