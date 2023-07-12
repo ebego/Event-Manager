@@ -8,3 +8,13 @@ export interface Event {
   price?: number;
   location?: string
 }
+
+export interface User {
+  id?: number;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  password?: string
+}
+
