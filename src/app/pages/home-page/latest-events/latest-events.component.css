@@ -69,7 +69,7 @@ div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, ol, ul, li, figcaption, tex
   align-content: center;
   -ms-flex-align: start;
   -webkit-box-align: start;
-  align-items: start;
+  align-items: flex-start;
 }
 
 *, ::after, ::before {
@@ -486,7 +486,7 @@ div {
   align-content: center;
   -ms-flex-align: start;
   -webkit-box-align: start;
-  align-items: start;
+  align-items: flex-start;
 }
 section, .container, .container-fluid {
   position: relative;
@@ -538,7 +538,7 @@ body {
   align-content: center;
   -ms-flex-align: start;
   -webkit-box-align: start;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .col-lg-4 {
