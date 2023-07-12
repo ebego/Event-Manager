@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Event} from "../../models/event.model";
 import {environment} from "../../../environments/environment";
@@ -8,6 +8,10 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class EventService {
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(private httpClient:HttpClient) {}
 
@@ -22,7 +26,9 @@ export class EventService {
   }
   getEventsById(id?: string): Observable<Event> {
     return this.httpClient.get<Event>(environment.apiBaseUrl + `/events/${id}`);  }
-  addEvent(event: Event): Observable<Event[]> {
-    return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events/add");
+
+  addEvent(event: Event): Observable<Event> {
+    return this.httpClient.post<Event>(environment.apiBaseUrl + "/events/add" , event, this.httpOptions);
   }
+
 }
