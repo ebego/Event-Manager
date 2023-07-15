@@ -13,6 +13,10 @@ export class EventsPageComponent implements OnInit {
   events: Event[] | any;
   env: any;
   query?: string
+  // pagedEvents: Event[] = [];
+  // currentPage = 1;
+  // pageSize = 10;
+  // totalPages = 0;
 
   newEvent: Event = {
     title: '',
@@ -54,4 +58,37 @@ export class EventsPageComponent implements OnInit {
       }
     })
   }
+  //
+  // ngOnInit(): void {
+  //   this.getEvents();
+  // }
+  //
+  // getEvents(): void {
+  //   this.pageService.getEvents(this.currentPage, this.pageSize)
+  //     .subscribe(data => {
+  //       this.events = data.content;
+  //       this.totalPages = data.totalPages;
+  //       this.updatePagedEvents();
+  //     });
+  // }
+  //
+  // updatePagedEvents(): void {
+  //   const startIndex = (this.currentPage - 1) * this.pageSize;
+  //   const endIndex = startIndex + this.pageSize;
+  //   this.pagedEvents = this.events.slice(startIndex, endIndex);
+  // }
+  //
+  // nextPage(): void {
+  //   if (this.currentPage < this.totalPages) {
+  //     this.currentPage++;
+  //     this.updatePagedEvents();
+  //   }
+  // }
+  //
+  // previousPage(): void {
+  //   if (this.currentPage > 1) {
+  //     this.currentPage--;
+  //     this.updatePagedEvents();
+  //   }
+  // }
 }

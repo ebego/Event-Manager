@@ -9,16 +9,14 @@
 .search-form {
   padding: 12rem 10rem;
   background-color: transparent;
+
 }
 
-form-control{
-  padding: 1.375rem 0.75rem;
+.form-control{
+  font-size: 1.5rem;
 }
 
-.search-form[_ngcontent-ng-c655001274][_ngcontent-ng-c655001274] {
-  padding: 13rem 11rem;
-}
-
-.search-form[_ngcontent-ng-c655001274] {
-  padding: 15rem 10rem;}
+.btn {
+  --bs-btn-padding-x: 0.75rem;
+  --bs-btn-padding-y: 0.75rem;}
 

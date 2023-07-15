@@ -7,6 +7,8 @@ import {EventsPageComponent} from "./pages/events-page/events-page.component";
 import {EventDetailPageComponent} from "./pages/event-detail-page/event-detail-page.component";
 import {ContactFormComponent} from "./pages/contact-page/contact-form/contact-form.component";
 import {RegisterFormComponent} from "./pages/event-detail-page/register-form/register-form.component";
+import {LoginFormComponent} from "./shared/login-form/login-form.component";
+import {SignupFormComponent} from "./shared/signup-form/signup-form.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,7 +19,8 @@ const routes: Routes = [
   {path: 'event-detail/:id', component: EventDetailPageComponent},
   {path: 'form', component: ContactFormComponent},
   {path: 'register', component: RegisterFormComponent},
-
+  {path:'login-form', component:LoginFormComponent},
+  {path:'signup-form', component: SignupFormComponent},
 
 ];
 

@@ -16,6 +16,8 @@ import { LatestEventsComponent } from './pages/home-page/latest-events/latest-ev
 import { MostViewedComponent } from './pages/home-page/most-viewed/most-viewed.component';
 import { ContactFormComponent } from './pages/contact-page/contact-form/contact-form.component';
 import { RegisterFormComponent } from './pages/event-detail-page/register-form/register-form.component';
+import { LoginFormComponent } from './shared/login-form/login-form.component';
+import { SignupFormComponent } from './shared/signup-form/signup-form.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { RegisterFormComponent } from './pages/event-detail-page/register-form/r
     MostViewedComponent,
     ContactFormComponent,
     RegisterFormComponent,
+    LoginFormComponent,
+    SignupFormComponent,
   ],
   imports: [
     BrowserModule,

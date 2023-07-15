@@ -10,3 +10,52 @@ span.tittle{
   font-size: calc(0.5rem + 1vw);
   font-family: system-ui;
 }
+
+.navbar-nav {
+  flex-direction: row;
+}
+.ml-auto, .mx-auto {
+  margin-left: auto !important;
+}
+.pb-0, .py-0 {
+  padding-bottom: 0 !important;
+}
+.pt-0, .py-0 {
+  padding-top: 0 !important;
+}
+
+.navbar-nav[_ngcontent-ng-c3356175772] {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6F6F6F;
+  text-align: left;
+  background-color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  padding: 20px 10px;
+  color: #1C1C1C;
+  outline: none;
+}
+
+.nav-link {
+  padding: 18px 10px;
+  color: #1C1C1C;
+  outline: none;
+}
+
