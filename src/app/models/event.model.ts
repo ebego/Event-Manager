@@ -6,7 +6,8 @@ export interface Event {
   banner?: string;
   isPast?: boolean;
   price?: number;
-  location?: string
+  location?: string;
+  maxBooking?: number;
 }
 
 export interface User {

@@ -18,6 +18,8 @@ import { ContactFormComponent } from './pages/contact-page/contact-form/contact-
 import { RegisterFormComponent } from './pages/event-detail-page/register-form/register-form.component';
 import { LoginFormComponent } from './shared/login-form/login-form.component';
 import { SignupFormComponent } from './shared/signup-form/signup-form.component';
+import { ImageUploadAppComponent } from './shared/image-upload-app/image-upload-app.component';
+import { ImageUploadComponent } from './shared/image-upload-app/image-upload/image-upload.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { SignupFormComponent } from './shared/signup-form/signup-form.component'
     RegisterFormComponent,
     LoginFormComponent,
     SignupFormComponent,
+    ImageUploadAppComponent,
+    ImageUploadComponent,
   ],
   imports: [
     BrowserModule,

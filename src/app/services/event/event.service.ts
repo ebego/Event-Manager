@@ -13,7 +13,15 @@ export class EventService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private httpClient:HttpClient) {}
+  constructor(private httpClient:HttpClient, private http: HttpClient) {}
+
+  // uploadImage(imageFile: File): Promise<any> {
+  //   const formData: FormData = new FormData();
+  //   formData.append('image', imageFile, imageFile.name);
+  //
+  //   // Replace 'YOUR_IMAGE_UPLOAD_API_URL' with your backend API endpoint for image upload
+  //   return this.http.post<any>('YOUR_IMAGE_UPLOAD_API_URL', formData).toPromise();
+  // }
 
   getLatestEvents(): Observable<Event[]> {
     return this.httpClient.get<Event[]>(environment.apiBaseUrl + "/events/latest");

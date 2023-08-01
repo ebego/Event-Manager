@@ -1,7 +1,93 @@
 <div class="container p-3">
   <div class="row">
     <app-search [query]="query" (onSearch)="refreshList($event)"  class="my-2"></app-search>
-    <button (click)="add()">Add</button>
+    <section *ngIf="newEvent">
+    <div class="new-event">
+      <h2>Add a new event</h2>
+      <label for="title">Title:</label>
+      <input type="text" id="title" required minlength="4" [(ngModel)]="newEvent.title" #title="ngModel">
+      <ng-container *ngIf="title.invalid && (title.dirty || title.touched)"
+                    class="alert">
+
+    <span *ngIf="title.errors?.['required']">
+      Title is required.
+    </span>
+        <span *ngIf="title.errors?.['minlength']">
+      Title must be at least 4 characters long.
+    </span>
+      </ng-container>
+
+      <label for="eventDate">Event date:</label>
+      <input type="date" id="eventDate" required minlength="4" [(ngModel)]="newEvent.eventDate" #eventDate="ngModel">
+<!--      <ng-container *ngIf="eventDate.invalid && (eventDate.dirty || eventDate.touched)"-->
+<!--                    class="alert">-->
+
+<!--    <span *ngIf="eventDate.errors?.['required']">-->
+<!--      Event date is required.-->
+<!--    </span>-->
+<!--        <span *ngIf="eventDate.errors?.['minlength']">-->
+<!--      Event date must be at least 4 characters long.-->
+<!--    </span>-->
+<!--      </ng-container>-->
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" required minlength="4" [(ngModel)]="newEvent.description" #description="ngModel">
+<!--      <ng-container *ngIf="description.invalid && (description.dirty || description.touched)"-->
+<!--                    class="alert">-->
+
+<!--    <span *ngIf="description.errors?.['required']">-->
+<!--      Description is required.-->
+<!--    </span>-->
+<!--        <span *ngIf="description.errors?.['minlength']">-->
+<!--      Description must be at least 4 characters long.-->
+<!--    </span>-->
+<!--      </ng-container>-->
+
+<!--      <label for="banner">Banner:</label>-->
+<!--      <input type="text" id="banner" [(ngModel)]="newEvent.banner" #banner="ngModel">-->
+      <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*">
+
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" [(ngModel)]="newEvent.location" #banner="ngModel">
+<!--      <ng-container *ngIf="banner.invalid && (banner.dirty || banner.touched)"-->
+<!--                    class="alert">-->
+
+<!--    <span *ngIf="banner.errors?.['required']">-->
+<!--      Banner is required.-->
+<!--    </span>-->
+<!--        <span *ngIf="banner.errors?.['minlength']">-->
+<!--      Banner must be at least 4 characters long.-->
+<!--    </span>-->
+<!--      </ng-container>-->
+      <label for="price">Price:</label>
+      <input type="number" id="price" required minlength="4" [(ngModel)]="newEvent.price" #price="ngModel">
+<!--      <ng-container *ngIf="banner.invalid && (banner.dirty || banner.touched)"-->
+<!--                    class="alert">-->
+
+<!--    <span *ngIf="banner.errors?.['required']">-->
+<!--      Banner is required.-->
+<!--    </span>-->
+<!--        <span *ngIf="banner.errors?.['minlength']">-->
+<!--      Banner must be at least 4 characters long.-->
+<!--    </span>-->
+<!--      </ng-container>-->
+      <label for="maxBooking">MaxBookings:</label>
+      <input type="number" id="maxBooking" required minlength="4" [(ngModel)]="newEvent.maxBooking" #maxBooking="ngModel">
+<!--      <ng-container *ngIf="banner.invalid && (banner.dirty || banner.touched)"-->
+<!--                    class="alert">-->
+
+<!--    <span *ngIf="banner.errors?.['required']">-->
+<!--      Banner is required.-->
+<!--    </span>-->
+<!--        <span *ngIf="banner.errors?.['minlength']">-->
+<!--      Banner must be at least 4 characters long.-->
+<!--    </span>-->
+<!--      </ng-container>-->
+
+      <button (click)="add()">Add</button>
+    </div>
+    </section>
     <div class="col-12 col-md-4 col-lg- event" *ngFor="let event of events">
       <a style="text-decoration: none;" [routerLink]="'/event-detail/' + event?.id">
 
