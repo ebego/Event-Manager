@@ -21,20 +21,9 @@ export class ImageUploadComponent {
   }
 
   onUpload(): void {
-    console.log("ERDIT", this.selectedFile);
     if (this.selectedFile) {
-      this.imageUploadService.uploadImage(this.selectedFile)
-        .then((response) => {
-          console.log('Image uploaded successfully:', response);
-          // Handle the response from the server as needed
-        })
-        .catch((error) => {
-          console.error('Error uploading image:', error);
-        })
-        .finally(() => {
-          // Optionally, clear the file input after uploading
-          this.clearFileInput();
-        });
+      this.imageUploadService.uploadImage(this.selectedFile);
+      this.clearFileInput()
     }
   }
 

@@ -26,7 +26,7 @@ export class EventsPageComponent implements OnInit {
     title: '',
     eventDate: '',
     description: '',
-    banner: this.selectedFile?.name,
+    banner: '',
     location: '',
     price: 0,
     maxBooking: 0
@@ -40,56 +40,94 @@ export class EventsPageComponent implements OnInit {
     this.refreshList(this.query)
   }
 
-  onFileSelected(event: Event): void {
-    const inputElement = event.target as HTMLInputElement;
-    console.log("ERDIT", event);
-    if (inputElement.files && inputElement.files.length > 0) {
-      this.selectedFile = inputElement.files[0];
-    }
-  }
-
   // onFileSelected(event: Event): void {
-  //   const inputElement = event.banner as HTMLInputElement;
+  //   const inputElement = event.target as HTMLInputElement;
   //   if (inputElement.files && inputElement.files.length > 0) {
   //     this.selectedFile = inputElement.files[0];
   //   }
   // }
+
+
+  // onUpload(): void {
+  //   if (this.selectedFile) {
+  //     this.imageUploadService.uploadImage(this.selectedFile);
+  //   }
+  //   if (this.selectedFile) {
+  //     this.imageUploadService.uploadImage(this.selectedFile)
+  //       .then((response) => {
+  //         console.log('Image uploaded successfully:', response);
+  //         // Handle the response from the server as needed
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error uploading image:', error);
+  //       })
+  //       .finally(() => {
+  //         // Optionally, clear the file input after uploading
+  //         this.clearFileInput();
+  //       });
+  //   }
+  // }
+
+  // onUpload(): void {
+  //   if (this.selectedFile) {
+  //     this.imageUploadService.uploadImage(this.selectedFile)
+  //       .then((response) => {
+  //         console.log('Image uploaded successfully:', response);
+  //         this.addEventWithImage(response.url); // Call the method to add the event with the uploaded image URL
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error uploading image:', error);
+  //       })
+  //       .finally(() => {
+  //         this.clearFileInput();
+  //       });
+  //   } else {
+  //     this.addEventWithoutImage(); // Call the method to add the event without the image
+  //   }
+  // }
+  // addEventWithImage(imageUrl: string): void {
+  //   let newEvent1 = {
+  //     title: this.newEvent.title,
+  //     eventDate: this.newEvent.eventDate,
+  //     description: this.newEvent.description,
+  //     banner: imageUrl, // Use the uploaded image URL here
+  //     location: this.newEvent.location,
+  //     price: this.newEvent.price,
+  //     maxBooking: this.newEvent.maxBooking
+  //   };
+  //   this.eventService.addEvent(newEvent1)
+  //     .subscribe(event => {
+  //       this.events.push(event);
+  //       this.newEvent = {
+  //         title: '',
+  //         eventDate: '',
+  //         description: '',
+  //         banner: ""
+  //       };
+  //     });
+  // }
   //
-
-  onUpload(): void {
-    console.log("ERDIT", this.selectedFile);
-    if (this.selectedFile) {
-      this.imageUploadService.uploadImage(this.selectedFile)
-        .then((response) => {
-          console.log('Image uploaded successfully:', response);
-          // Handle the response from the server as needed
-        })
-        .catch((error) => {
-          console.error('Error uploading image:', error);
-        })
-        .finally(() => {
-          // Optionally, clear the file input after uploading
-          this.clearFileInput();
-        });
-    }
-  }
-
+  // addEventWithoutImage(): void {
+  //   this.eventService.addEvent(this.newEvent)
+  //     .subscribe(event => {
+  //       this.events.push(event);
+  //       this.newEvent = {
+  //         title: '',
+  //         eventDate: '',
+  //         description: '',
+  //         banner: ""
+  //       };
+  //     });
+  // }
 
   add(): void {
-    this.onUpload()
-
-    //
-    // const inputElement = this.fileInput as HTMLInputElement;
-    // if (inputElement.files && inputElement.files.length > 0) {
-    //   this.selectedFile = inputElement.files[0];
-    // }
-    // Upload data to server and update local table
+    // this.onUpload()
 
     let newEvent1 = {
       title: this.newEvent.title,
       eventDate: this.newEvent.eventDate,
       description: this.newEvent.description,
-      banner: this.selectedFile?.name,
+      banner: this.newEvent.banner,
       location: this.newEvent.location,
       price: this.newEvent.price,
       maxBooking: this.newEvent.maxBooking
@@ -101,15 +139,70 @@ export class EventsPageComponent implements OnInit {
           title: '',
           eventDate: '',
           description: '',
-          banner: ""
+          banner: ''
         }
       });
 
   }
-  clearFileInput(): void {
-    this.fileInput.nativeElement.value = '';
-    this.selectedFile = null;
-  }
+
+  // delete(): void {
+  //   this.env = environment
+  //   const id = this.route.snapshot.paramMap.get('id') || '';
+  //   if (!id)
+  //     console.error("Id is not valid: ", "No id in paramter")
+  // }
+
+  // add(): void {
+  //   if (this.selectedFile) {
+  //     this.imageUploadService.uploadImage(this.selectedFile)
+  //       .then((response) => {
+  //         console.log('Image uploaded successfully:', response);
+  //         let newEvent1 = {
+  //           title: this.newEvent.title,
+  //           eventDate: this.newEvent.eventDate,
+  //           description: this.newEvent.description,
+  //           banner: response.url, // Use the uploaded image URL here
+  //           location: this.newEvent.location,
+  //           price: this.newEvent.price,
+  //           maxBooking: this.newEvent.maxBooking
+  //         };
+  //         this.eventService.addEvent(newEvent1)
+  //           .subscribe(event => {
+  //             this.events.push(event);
+  //             this.newEvent = {
+  //               title: '',
+  //               eventDate: '',
+  //               description: '',
+  //               banner: ""
+  //             };
+  //           });
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error uploading image:', error);
+  //       })
+  //       .finally(() => {
+  //         // Optionally, clear the file input after uploading
+  //         this.clearFileInput();
+  //       });
+  //   } else {
+  //     // Proceed with adding the event without the image
+  //     this.eventService.addEvent(this.newEvent)
+  //       .subscribe(event => {
+  //         this.events.push(event);
+  //         this.newEvent = {
+  //           title: '',
+  //           eventDate: '',
+  //           description: '',
+  //           banner: ""
+  //         };
+  //       });
+  //   }
+  // }
+
+  // clearFileInput(): void {
+  //   this.fileInput.nativeElement.value = '';
+  //   this.selectedFile = null;
+  // }
 
   refreshList(query: string) {
     this.env = environment;
@@ -122,4 +215,19 @@ export class EventsPageComponent implements OnInit {
       }
     })
   }
+
+  deleteEvent(id: string): void {
+    this.eventService.deleteEventsById(id).subscribe(
+      () => {
+        // After successful deletion, update the events list by filtering out the deleted event
+        this.events = this.events.filter((event: Eventi) => event.id !== id);
+        // Provide the Eventi type for the 'event' parameter in the filter function
+      },
+      error => {
+        console.error('Error deleting event:', error);
+        // Handle error here (e.g., show error message to the user)
+      }
+    );
+  }
+
 }

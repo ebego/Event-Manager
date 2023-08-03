@@ -38,5 +38,7 @@ export class EventService {
   addEvent(event: Event): Observable<Event> {
     return this.httpClient.post<Event>(environment.apiBaseUrl + "/events/add" , event, this.httpOptions);
   }
+  deleteEventsById(id?: string): Observable<Event> {
+    return this.httpClient.delete<Event>(environment.apiBaseUrl + `/events/delete/${id}`);  }
 
 }
