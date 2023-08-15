@@ -9,6 +9,7 @@ import {ContactFormComponent} from "./pages/contact-page/contact-form/contact-fo
 import {RegisterFormComponent} from "./pages/event-detail-page/register-form/register-form.component";
 import {LoginFormComponent} from "./shared/login-form/login-form.component";
 import {SignupFormComponent} from "./shared/signup-form/signup-form.component";
+import {LoginComponent} from "./shared/auth-service/login.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterFormComponent},
   {path:'login-form', component:LoginFormComponent},
   {path:'signup-form', component: SignupFormComponent},
+  { path: 'login', component: LoginComponent },
 
 ];
 
@@ -34,3 +36,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

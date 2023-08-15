@@ -20,6 +20,7 @@ import { LoginFormComponent } from './shared/login-form/login-form.component';
 import { SignupFormComponent } from './shared/signup-form/signup-form.component';
 import { ImageUploadAppComponent } from './shared/image-upload-app/image-upload-app.component';
 import { ImageUploadComponent } from './shared/image-upload-app/image-upload/image-upload.component';
+import { LoginComponent } from './shared/auth-service/login.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ImageUploadComponent } from './shared/image-upload-app/image-upload/ima
     SignupFormComponent,
     ImageUploadAppComponent,
     ImageUploadComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
